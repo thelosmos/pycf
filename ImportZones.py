@@ -17,7 +17,7 @@ logging.getLogger('').addHandler(console)
 apiKeyEmail = secrets_file.API_KEY_EMAIL
 apiKeyKey = secrets_file.API_KEY_KEY
 conn = http.client.HTTPSConnection("api.cloudflare.com")
-domainFile = open('testDomainList.private.txt', 'r')
+domainFile = open('domainList.private.00', 'r')
 domainList = []
 headers = {
     'Content-Type': "application/json",

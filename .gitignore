@@ -2,3 +2,5 @@ secrets_file.py
 *__pycache__*
 *.private.*
 *venv*
+*.log
+

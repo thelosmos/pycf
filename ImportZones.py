@@ -3,6 +3,9 @@ import secrets_file
 import json
 import logging
 
+# Domain List File
+inputFile = 'domainList.private.00'
+
 # Configure logging to both file and console
 logging.basicConfig(filename='ImportZones.log', filemode='a', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
@@ -17,7 +20,7 @@ logging.getLogger('').addHandler(console)
 apiKeyEmail = secrets_file.API_KEY_EMAIL
 apiKeyKey = secrets_file.API_KEY_KEY
 conn = http.client.HTTPSConnection("api.cloudflare.com")
-domainFile = open('domainList.private.00', 'r')
+domainFile = open(inputFile, 'r')
 domainList = []
 headers = {
     'Content-Type': "application/json",

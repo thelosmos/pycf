@@ -7,6 +7,7 @@ import argparse
 # Arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", "--file", help="list of domains to import")
+
 args = parser.parse_args()
 
 # Domain List File

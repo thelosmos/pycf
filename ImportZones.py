@@ -2,9 +2,15 @@ import http.client
 import secrets_file
 import json
 import logging
+import argparse
+
+# Arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("-f", "--file", help="list of domains to import")
+args = parser.parse_args()
 
 # Domain List File
-inputFile = 'domainList.private.00'
+inputFile = args.file
 
 # Configure logging to both file and console
 logging.basicConfig(filename='ImportZones.log', filemode='a', level=logging.INFO,

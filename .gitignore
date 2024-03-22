@@ -1,6 +1,8 @@
 secrets_file.py
 *__pycache__*
 *.private.*
+*private*
+*.private
 *venv*
 *.log
 ImportZones.log

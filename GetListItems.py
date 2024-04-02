@@ -15,7 +15,7 @@ headers = {
     'X-Auth-Key':  apiKeyKey
     }
 
-conn.request("GET", "/client/v4/accounts/"+secrets_file.ACCOUNT_ID+"/rules/lists/"+listID+"/items", headers=headers)
+conn.request("GET", "/client/v4/accounts/"+secrets_file.ACCOUNT_ID+"/rules/lists/"+listID+"/items?per_page=500", headers=headers)
 
 res = conn.getresponse()
 data = res.read()

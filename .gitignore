@@ -6,3 +6,5 @@ secrets_file.py
 *venv*
 *.log
 ImportZones.log
+*.env
+*env*

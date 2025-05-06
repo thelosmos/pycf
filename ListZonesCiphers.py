@@ -21,4 +21,19 @@ zoneData = json.loads(data)
 for i in range (0, len (zoneData['result'])):
     zoneID = zoneData['result'][i]['id']
     zoneName = zoneData['result'][i]['name']
-    print(zoneID +", "+zoneName)
+
+# List Minimum TLS Version
+    conn.request("GET", "/client/v4/zones/"+zoneID+"/settings/min_tls_version?page=1&per_page=1000", headers=headers)
+    res = conn.getresponse()
+    data = res.read().decode("utf-8")
+    tlsData = json.loads(data)
+    tlsVer = tlsData['result']['value']
+
+
+# List Ciphers
+    conn.request("GET", "/client/v4/zones/"+zoneID+"/settings/ciphers?page=1&per_page=1000", headers=headers)
+    res = conn.getresponse()
+    data = res.read().decode("utf-8")
+    cipherData = json.loads(data)
+    alwCiphers = cipherData['result']['value']
+    print(zoneID +", "+zoneName +", "+tlsVer +" ,"+str(alwCiphers))
